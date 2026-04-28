@@ -130,7 +130,7 @@
             🏆 Kỷ lục: <span id="best-score-value">0</span> điểm
           </div>
           <div class="header-title w3-center" style="margin-top: 2%">
-            🎮 QUIZ HUẾ
+            🎮 QUIZ THÀNH PHỐ HUẾ
           </div>
           <div class="header-sub">Kiến thức – Văn hóa – Lịch sử quê hương</div>
           <div class="button-group">
@@ -139,7 +139,7 @@
               class="neon-btn neon-box1 buu"
               onclick="goWeb()"
             >
-              🏠 VỀ HUẾ
+              🏠 VỀ THÀNH PHỐ HUẾ
             </button>
             <script>
               function goWeb() {
@@ -626,7 +626,7 @@
         playFinishSound();
         stopAllMusic();
         document.querySelectorAll('[id^="sound-btn"]').forEach((btn) => {
-          btn.style.display = "none";
+          btn.classList.add("sound-btn-hidden");
         });
         document.getElementById("timer").style.display = "none";
         document.getElementById("progress").style.display = "none";
@@ -763,7 +763,7 @@
         document.getElementById("hud-wrong").innerText = "0";
         document.querySelector(".mobile-hud").style.display = "flex";
         document.querySelectorAll('[id^="sound-btn"]').forEach((btn) => {
-          btn.style.display = "inline-block";
+          btn.classList.remove("sound-btn-hidden");
         });
         const timerEl = document.getElementById("timer");
         timerEl.classList.remove("shake", "danger");
@@ -1018,9 +1018,9 @@
       let correctCount = 0;
       let totalTime = 10 * 60;
       let timer;
-      const correctSound = new Audio("./amthanh/dung.mp3"); 
-      const wrongSound = new Audio("./amthanh/wrong.mp3"); 
-      const finishSound = new Audio("./amthanh/end.mp3"); 
+      const correctSound = new Audio("./amthanh/dung.mp3");
+      const wrongSound = new Audio("./amthanh/wrong.mp3");
+      const finishSound = new Audio("./amthanh/end.mp3");
       function showToast(message, type) {
         const toast = document.getElementById("toast");
         if (toastTimer) {
@@ -1287,7 +1287,7 @@
           emoji = "💪";
         }
         const text = `
-🎮 QUIZ HUẾ 🎮
+🎮 QUIZ THÀNH PHỐ HUẾ 🎮
 🏆 Điểm: ${score}
 ✅ Số câu đúng: ${correctCount}/${total}
 ❌ Số câu sai: ${wrongCount}
